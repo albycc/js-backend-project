@@ -1,5 +1,5 @@
 /*
-File: startpage.js
+File: createuser.js
 Author: Richard Walton
 */
 
@@ -9,9 +9,9 @@ import {dirname} from '../utils/path.js'
 
 const router = express.Router();
 
-router.get('/', (req, res) =>{
-    res.render(path.join(dirname(), 'views/pages', 'startpage'), {
-        pagetitle:'Homepage'
+router.get('/register', (req, res) =>{
+    res.render(path.join(dirname(), 'views/pages', 'createuser'), {
+        pagetitle:'Register'
     })
 })
 
