@@ -1,0 +1,31 @@
+{
+  "name": "js-backend-project",
+  "version": "1.0.0",
+  "description": "A school project were we use js for backend with express and mongodb",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm start",
+    "start": "npx nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/albycc/js-backend-project.git"
+  },
+  "keywords": [
+    "express",
+    "node.js",
+    "mongodb"
+  ],
+  "author": "Richard Walton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/albycc/js-backend-project/issues"
+  },
+  "homepage": "https://github.com/albycc/js-backend-project#readme",
+  "dependencies": {
+    "ejs": "^3.1.7",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.16"
+  },
+  "type":"module"
+}
