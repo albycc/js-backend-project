@@ -2,5 +2,37 @@
 <%- include('../partials/header') %>
 <main>
     <h1>Create user</h1>
+    <form action="/users/register" method="POST" id="createuser-form">
+        <ul>
+            <li>
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name">
+            </li>
+            <li>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+            </li>
+            <li>
+                <label for="phone">Phone</label>
+                <input type="tel" name="phone" id="phone">
+            </li>
+            <li>
+                <label for="joined">Joined</label>
+                <input type="datetime-local" name="joined" id="joined">
+            </li>
+            <li>
+                <div>
+                    <input type="button" value="+" id="add-game">
+                    <label for="add-game">Add game title</label>
+                </div>
+                <input type="text">
+            </li>
+            <li>
+                <button type="submit">Create user</button>
+            </li>
+        </ul>
+    </form>
 </main>
 <%- include('../partials/footer') %>
+<!-- <script src="/js/form.js"></script> -->
+<%- include('../partials/end') %>
