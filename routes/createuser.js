@@ -4,8 +4,6 @@ Author: Richard Walton
 */
 
 import express from "express";
-import path from 'path';
-import {dirname} from '../utils/path.js'
 import {MongoClient} from 'mongodb';
 
 const client = new MongoClient('mongodb://127.0.0.1:27017');
@@ -18,7 +16,7 @@ const router = express.Router();
 router.use(express.urlencoded({extended:true}));
 
 router.get('/users/register', (req, res) =>{
-    res.render(path.join(dirname(), 'views/pages', 'createuser'), {
+    res.render('pages/createuser', {
         pagetitle:'Register'
     })
 })
