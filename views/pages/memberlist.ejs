@@ -2,5 +2,19 @@
 <%- include('../partials/header') %>
 <main>
     <h1>Memberlist</h1>
+    <ul>
+        <% gamers.forEach(g => { %>
+            <li>
+                <div>
+                    <a href="/user/<%= g._id %>">
+                        <p><%= g.name %></p>
+                        <p><%= g.hasOwnProperty('games') ? g.games.join(', ') : 'no games listed' %></p>
+                    </a>
+                </div>
+            </li>
+        <% }) %>
+
+    </ul>
 </main>
 <%- include('../partials/footer') %>
+<%- include('../partials/end') %>
