@@ -8,7 +8,7 @@
                     <li>
                         <a href="#profile_<%= g._id %>">
                             <div>
-                                <!-- <img src="" alt=""> -->
+                                <img src="/img/icons/avatar_icon.svg" alt="">
                             </div>
                         </a>
                     </li>
@@ -44,8 +44,15 @@
                     <li>
                         <a href="/user/<%= g._id %>" id="profile_<%= g._id %>">
                             <div class="profile-container">
-                                <p><%= g.name %></p>
-                                <p><%= g.hasOwnProperty('games') ? g.games.join(', ') : 'no games listed' %></p>
+                                <div class="avatar-row-header">
+                                    <div class="avatar-icon-container">
+                                        <img src="/img/icons/avatar_icon.svg" alt="">
+                                    </div>
+                                    <h2><%= g.name %></h2>
+                                </div>
+                                <div class="active-game-row">
+                                    <span><%= g.hasOwnProperty('activegame') ? g.activegame : 'no games listed' %></span>
+                                </div>
                             </div>
                         </a>
                     </li>

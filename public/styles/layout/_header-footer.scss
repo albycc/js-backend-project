@@ -5,6 +5,10 @@
 html, body{
     height:100%;
 }
+
+html{
+    overflow-y: scroll;
+}
 body{
     display:flex;
     flex-direction: column;
@@ -55,19 +59,15 @@ body{
         display: flex;
         flex-grow: 1;
         background-color: #555A69;
-        min-height: 800px;
 
         main{
             display:flex;
             flex-direction: column;
             height:100%;
             width:100%;
-            align-self: center;
+            align-items: center;
             background-color: coral;
-            & > *{
-                margin-left:auto;
-                margin-right:auto;
-            }
+
         }
         aside{
             display:none;

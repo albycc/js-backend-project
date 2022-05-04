@@ -1,15 +1,18 @@
 @import '../abstracts/variables.scss';
 
 div.search-container{
-    min-height:100px;
     width:100%;
     max-width: $memberlist-width;
     background-color: #ADADAD;
     border-radius: 12px;
+    padding:15px 45px;
 
     form{
         ul{
             list-style-type: none;
+            li{
+                margin:10px 0px;
+            }
         }
     }
 }
@@ -24,12 +27,42 @@ div.memberlist-container{
         li{
             margin-top:10px;
             a{
+                color:rgb(24, 24, 24);
+                text-decoration: none;
                 div.profile-container{
                     display: flex;
                     flex-direction: column;
-                    height:150px;
                     background-color: grey;
+                    padding:15px 20px;
+                    min-height:100px;
+                    div.avatar-row-header{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        div.avatar-icon-container{
+                            background-color: orange;
+                            border-radius: 9px;
+                            img{
+                                width:70px;
+                                height:70px;
+                            }
 
+                        }
+                        h2{
+                            margin:0px 25px;
+                            font-size:1.4em
+                        }
+                    }
+
+                    div.active-game-row{
+                        display: flex;
+                        min-height:60px;
+                        align-items: center;
+                        padding: 0 20px;
+                        span{
+                            font-size: 1.2em;
+                        }
+                    }
 
                     &:hover{
                         background-color: rgb(175, 175, 175);
@@ -44,11 +77,11 @@ div.memberlist-container{
 div.avatar-quicklist{
     width:20%;
     background-color: bisque;
-    margin-top:140px;
+    margin-top:160px;
     ul{
         display: flex;
         flex-direction: column;
-        align-self: center;
+        align-items: center;
         list-style-type: none;
         li{
             margin:10px 30px;
@@ -56,8 +89,11 @@ div.avatar-quicklist{
                 div{
                     border-radius: 10px;
                     background-color: yellow;
-                    width:$quicklist-avatar-size;
-                    height:$quicklist-avatar-size;
+                    img{
+                        width:$quicklist-avatar-size;
+                        height:$quicklist-avatar-size;
+
+                    }
 
                 }
             }
@@ -74,6 +110,23 @@ div.avatar-quicklist{
                 div.avatar-quicklist{
                     width:10rem;
 
+                }
+            }
+        }
+    }
+
+    div.memberlist-container{
+        ul{
+            li{
+                a{
+                    div.profile-container{
+                        div.avatar-row-header{
+                            flex-direction: row;
+                            h2{
+                                font-size: 1.9em;
+                            }
+                        }
+                    }
                 }
             }
         }

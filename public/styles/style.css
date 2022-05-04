@@ -3,6 +3,9 @@
 html, body {
   height: 100%; }
 
+html {
+  overflow-y: scroll; }
+
 body {
   display: flex;
   flex-direction: column;
@@ -40,18 +43,14 @@ body {
   body div.main-content {
     display: flex;
     flex-grow: 1;
-    background-color: #555A69;
-    min-height: 800px; }
+    background-color: #555A69; }
     body div.main-content main {
       display: flex;
       flex-direction: column;
       height: 100%;
       width: 100%;
-      align-self: center;
+      align-items: center;
       background-color: coral; }
-      body div.main-content main > * {
-        margin-left: auto;
-        margin-right: auto; }
     body div.main-content aside {
       display: none;
       background-color: yellow; }
@@ -60,13 +59,15 @@ body {
     background-color: #28292C; }
 
 div.search-container {
-  min-height: 100px;
   width: 100%;
   max-width: 700px;
   background-color: #ADADAD;
-  border-radius: 12px; }
+  border-radius: 12px;
+  padding: 15px 45px; }
   div.search-container form ul {
     list-style-type: none; }
+    div.search-container form ul li {
+      margin: 10px 0px; }
 
 div.memberlist-container {
   background-color: crimson;
@@ -76,36 +77,66 @@ div.memberlist-container {
     list-style-type: none; }
     div.memberlist-container ul li {
       margin-top: 10px; }
-      div.memberlist-container ul li a div.profile-container {
-        display: flex;
-        flex-direction: column;
-        height: 150px;
-        background-color: grey; }
-        div.memberlist-container ul li a div.profile-container:hover {
-          background-color: #afafaf; }
+      div.memberlist-container ul li a {
+        color: #181818;
+        text-decoration: none; }
+        div.memberlist-container ul li a div.profile-container {
+          display: flex;
+          flex-direction: column;
+          background-color: grey;
+          padding: 15px 20px;
+          min-height: 100px; }
+          div.memberlist-container ul li a div.profile-container div.avatar-row-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center; }
+            div.memberlist-container ul li a div.profile-container div.avatar-row-header div.avatar-icon-container {
+              background-color: orange;
+              border-radius: 9px; }
+              div.memberlist-container ul li a div.profile-container div.avatar-row-header div.avatar-icon-container img {
+                width: 70px;
+                height: 70px; }
+            div.memberlist-container ul li a div.profile-container div.avatar-row-header h2 {
+              margin: 0px 25px;
+              font-size: 1.4em; }
+          div.memberlist-container ul li a div.profile-container div.active-game-row {
+            display: flex;
+            min-height: 60px;
+            align-items: center;
+            padding: 0 20px; }
+            div.memberlist-container ul li a div.profile-container div.active-game-row span {
+              font-size: 1.2em; }
+          div.memberlist-container ul li a div.profile-container:hover {
+            background-color: #afafaf; }
 
 div.avatar-quicklist {
   width: 20%;
   background-color: bisque;
-  margin-top: 140px; }
+  margin-top: 160px; }
   div.avatar-quicklist ul {
     display: flex;
     flex-direction: column;
-    align-self: center;
+    align-items: center;
     list-style-type: none; }
     div.avatar-quicklist ul li {
       margin: 10px 30px; }
       div.avatar-quicklist ul li a div {
         border-radius: 10px;
-        background-color: yellow;
-        width: 60px;
-        height: 60px; }
+        background-color: yellow; }
+        div.avatar-quicklist ul li a div img {
+          width: 60px;
+          height: 60px; }
 
 @media screen and (min-width: 390px) {
   body div.main-content aside {
     display: block; }
     body div.main-content aside div.avatar-quicklist {
-      width: 10rem; } }
+      width: 10rem; }
+
+  div.memberlist-container ul li a div.profile-container div.avatar-row-header {
+    flex-direction: row; }
+    div.memberlist-container ul li a div.profile-container div.avatar-row-header h2 {
+      font-size: 1.9em; } }
 *, *::before, *::after {
   box-sizing: border-box;
   padding: 0;
