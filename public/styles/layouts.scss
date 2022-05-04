@@ -1,0 +1,22 @@
+html, body{
+    height:100%;
+}
+body{
+    display:flex;
+    flex-direction: column;
+    width:100vw;
+    align-content: space-between;
+    header{
+        height:60px;
+        background-color: rgb(197, 197, 250);
+    }
+    main{
+        flex-grow: 1;
+        background-color: aliceblue;
+    }
+    footer{
+        min-height: 200px;
+        background-color: darkmagenta;
+    }
+}
+

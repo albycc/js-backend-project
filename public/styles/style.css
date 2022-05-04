@@ -1,5 +1,24 @@
-*{
-    box-sizing: border-box;
-    padding:0;
-    margin:0;
-}
+html, body {
+  height: 100%; }
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  align-content: space-between; }
+  body header {
+    height: 60px;
+    background-color: #c5c5fa; }
+  body main {
+    flex-grow: 1;
+    background-color: aliceblue; }
+  body footer {
+    min-height: 200px;
+    background-color: darkmagenta; }
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0; }
+
+/*# sourceMappingURL=style.css.map */
