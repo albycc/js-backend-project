@@ -1,20 +1,53 @@
 <%- include('../partials/head') %>
 <%- include('../partials/header') %>
-<main>
-    <h1>Memberlist</h1>
-    <ul>
-        <% gamers.forEach(g => { %>
-            <li>
-                <div>
-                    <a href="/user/<%= g._id %>">
-                        <p><%= g.name %></p>
-                        <p><%= g.hasOwnProperty('games') ? g.games.join(', ') : 'no games listed' %></p>
+<div class="main-content">
+    <aside>
+        <div class="avatar-quicklist">
+            <ul>
+                <li>
+                    <a href="">
+                        <div>
+                            <img src="" alt="">
+                        </div>
                     </a>
-                </div>
-            </li>
-        <% }) %>
+                </li>
+                <li>
+                    <a href="">
+                        <div>
+                            <img src="" alt="">
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <div>
+                            <img src="" alt="">
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <main>
+        <h1>Memberlist</h1>
+        <div class="search-container"></div>
+        <div class="member-container">
+            <ul>
+                <% gamers.forEach(g => { %>
+                    <li>
+                        <a href="/user/<%= g._id %>">
+                            <div>
+                                <p><%= g.name %></p>
+                                <p><%= g.hasOwnProperty('games') ? g.games.join(', ') : 'no games listed' %></p>
+                            </div>
+                        </a>
+                    </li>
+                <% }) %>
+        
+            </ul>
 
-    </ul>
-</main>
+        </div>
+    </main>
+</div>
 <%- include('../partials/footer') %>
 <%- include('../partials/end') %>

@@ -1,0 +1,68 @@
+@import '../abstracts/variables.scss';
+
+div.search-container{
+    min-height:100px;
+    width:100%;
+    max-width: 600px;
+    background-color: #ADADAD;
+    border-radius: 12px;
+}
+
+div.member-container{
+    ul{
+        list-style-type: none;
+        li{
+            margin-top:10px;
+            a{
+                div{
+                    display: flex;
+                    flex-direction: column;
+                    height:150px;
+                    background-color: grey;
+    
+                }
+            }
+        }
+    }
+}
+
+div.avatar-quicklist{
+    width:20%;
+    background-color: bisque;
+    margin-top:140px;
+    ul{
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        list-style-type: none;
+        li{
+            margin:10px 30px;
+            a{
+                div{
+                    border-radius: 10px;
+                    background-color: yellow;
+                    width:$quicklist-avatar-size;
+                    height:$quicklist-avatar-size;
+                    img{
+    
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+@media screen and (min-width:$smart-phones-width){
+    body{
+        div.main-content{
+            aside{
+                display:block;
+                div.avatar-quicklist{
+                    width:10rem;
+
+                }
+            }
+        }
+    }
+}
