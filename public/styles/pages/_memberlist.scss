@@ -3,22 +3,37 @@
 div.search-container{
     min-height:100px;
     width:100%;
-    max-width: 600px;
+    max-width: $memberlist-width;
     background-color: #ADADAD;
     border-radius: 12px;
+
+    form{
+        ul{
+            list-style-type: none;
+        }
+    }
 }
 
-div.member-container{
+div.memberlist-container{
+    background-color: crimson;
+    max-width:$memberlist-width;
+    width:100%;
+
     ul{
         list-style-type: none;
         li{
             margin-top:10px;
             a{
-                div{
+                div.profile-container{
                     display: flex;
                     flex-direction: column;
                     height:150px;
                     background-color: grey;
+
+
+                    &:hover{
+                        background-color: rgb(175, 175, 175);
+                    }
     
                 }
             }
@@ -43,9 +58,7 @@ div.avatar-quicklist{
                     background-color: yellow;
                     width:$quicklist-avatar-size;
                     height:$quicklist-avatar-size;
-                    img{
-    
-                    }
+
                 }
             }
         }

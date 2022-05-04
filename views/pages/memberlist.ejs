@@ -4,48 +4,53 @@
     <aside>
         <div class="avatar-quicklist">
             <ul>
-                <li>
-                    <a href="">
-                        <div>
-                            <img src="" alt="">
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <div>
-                            <img src="" alt="">
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <div>
-                            <img src="" alt="">
-                        </div>
-                    </a>
-                </li>
+                <% gamers.forEach(g => { %>
+                    <li>
+                        <a href="#profile_<%= g._id %>">
+                            <div>
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                        </a>
+                    </li>
+                <% }) %>
             </ul>
         </div>
     </aside>
     <main>
         <h1>Memberlist</h1>
-        <div class="search-container"></div>
-        <div class="member-container">
+        <div class="search-container">
+            <form action="">
+                <ul>
+                    <li>
+                        <span>Order: </span>
+                        <input type="checkbox" name="ascending" id="ascending">
+                        <label for="ascending">Ascending</label>
+                        <input type="checkbox" name="descending" id="descending">
+                        <label for="descending">Descending</label>
+                    </li>
+                    <li>
+                        <select name="games" id="games"></select>
+                    </li>
+                    <li>
+                        <input type="text" name="" id="">
+                        <button type="submit">Search</button>
+                    </li>
+                </ul>
+            </form>
+        </div>
+        <div class="memberlist-container">
             <ul>
                 <% gamers.forEach(g => { %>
                     <li>
-                        <a href="/user/<%= g._id %>">
-                            <div>
+                        <a href="/user/<%= g._id %>" id="profile_<%= g._id %>">
+                            <div class="profile-container">
                                 <p><%= g.name %></p>
                                 <p><%= g.hasOwnProperty('games') ? g.games.join(', ') : 'no games listed' %></p>
                             </div>
                         </a>
                     </li>
                 <% }) %>
-        
             </ul>
-
         </div>
     </main>
 </div>
