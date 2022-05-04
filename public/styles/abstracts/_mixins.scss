@@ -1,0 +1,17 @@
+@mixin flex-layout($column, $align-content:'flex-start', $align-items:'flex-start', $flex-wrap:'nowrap') {
+    display: flex;
+    align-content: $align-content;
+    align-items: $align-items;
+    flex-wrap: $flex-wrap;
+}
+
+@mixin link-colour($colour, $hover-colour, $active-colour){
+    color:$colour;
+    text-decoration: underline;
+    &:hover{
+        color:$hover-colour;
+    }
+    &:active{
+        color:$active-colour;
+    }
+}

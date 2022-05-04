@@ -1,0 +1,63 @@
+@use './abstracts/mixins';
+@use '../abstracts/mixins.scss' as *;
+@import '../abstracts/variables.scss';
+
+html, body{
+    height:100%;
+}
+body{
+    display:flex;
+    flex-direction: column;
+    width:100vw;
+    align-content: space-between;
+
+    header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height:$header-height;
+        background-color: #2B2D37;
+
+        span.header-icon{
+            a > .cube{
+                width:50px;
+                height:50px;
+                background-color: orange;
+            }
+        }
+        nav.navigation-meny{
+            ul{
+                display: flex;
+                justify-content: space-around;
+                width:100%;
+                li{
+                    list-style-type: none;
+                    margin: 0 5rem;
+
+                    a{
+                        display: inline-block;
+                        font-size: 1.5em;
+                        text-decoration: none;
+                        color:#2FF3F3;
+                        height: $header-height;
+                        margin: 0 10px;
+                        line-height: $header-height;
+                        transition: background-image 0.3s;
+                        &:hover{
+                            background-image: linear-gradient(#2B2D37, #40424e, rgb(73, 73, 228));
+                        }
+                    }
+                }
+            }
+        }
+    }
+    main{
+        flex-grow: 1;
+        background-color: #555A69;
+    }
+    footer{
+        min-height: 200px;
+        background-color: #28292C;
+    }
+}
+
