@@ -1,12 +1,16 @@
 <%- include('../partials/head') %>
 <%- include('../partials/header') %>
-<main>
-    <h1><%= name %></h1>
-    <div>
-        <p><%= joined %></p>
-        <p><%= typeof contact !== 'undefined' ? Object.values(contact).join(', ') : 'no contacts' %></p>
-        <p><%= typeof games !== 'undefined' ? games.join(', ') : 'no games listed' %></p>
-    </div>
-</main>
+
+<div class="main-content">
+    <main>
+        <h1><%= name %></h1>
+        <div>
+            <p><%= joined %></p>
+            <p><%= typeof contact !== 'undefined' ? Object.values(contact).join(', ') : 'no contacts' %></p>
+            <p><%= typeof games !== 'undefined' ? games.join(', ') : 'no games listed' %></p>
+        </div>
+    </main>
+
+</div>
 <%- include('../partials/footer') %>
 <%- include('../partials/end') %>

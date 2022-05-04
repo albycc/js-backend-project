@@ -1,20 +1,65 @@
 <%- include('../partials/head') %>
 <%- include('../partials/header') %>
-<main>
-    <h1>Memberlist</h1>
-    <ul>
-        <% gamers.forEach(g => { %>
-            <li>
-                <div>
-                    <a href="/user/<%= g._id %>">
-                        <p><%= g.name %></p>
-                        <p><%= g.hasOwnProperty('games') ? g.games.join(', ') : 'no games listed' %></p>
-                    </a>
-                </div>
-            </li>
-        <% }) %>
-
-    </ul>
-</main>
+<div class="main-content">
+    <aside>
+        <div class="avatar-quicklist">
+            <ul>
+                <% gamers.forEach(g => { %>
+                    <li>
+                        <a href="#profile_<%= g._id %>">
+                            <div>
+                                <img src="/img/icons/avatar_icon.svg" alt="">
+                            </div>
+                        </a>
+                    </li>
+                <% }) %>
+            </ul>
+        </div>
+    </aside>
+    <main>
+        <h1>Memberlist</h1>
+        <div class="search-container">
+            <form action="">
+                <ul>
+                    <li>
+                        <span>Order: </span>
+                        <input type="checkbox" name="ascending" id="ascending">
+                        <label for="ascending">Ascending</label>
+                        <input type="checkbox" name="descending" id="descending">
+                        <label for="descending">Descending</label>
+                    </li>
+                    <li>
+                        <select name="games" id="games"></select>
+                    </li>
+                    <li>
+                        <input type="text" name="" id="">
+                        <button type="submit">Search</button>
+                    </li>
+                </ul>
+            </form>
+        </div>
+        <div class="memberlist-container">
+            <ul>
+                <% gamers.forEach(g => { %>
+                    <li>
+                        <a href="/user/<%= g._id %>" id="profile_<%= g._id %>">
+                            <div class="profile-container">
+                                <div class="avatar-row-header">
+                                    <div class="avatar-icon-container">
+                                        <img src="/img/icons/avatar_icon.svg" alt="">
+                                    </div>
+                                    <h2><%= g.name %></h2>
+                                </div>
+                                <div class="active-game-row">
+                                    <span><%= g.hasOwnProperty('activegame') ? g.activegame : 'no games listed' %></span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                <% }) %>
+            </ul>
+        </div>
+    </main>
+</div>
 <%- include('../partials/footer') %>
 <%- include('../partials/end') %>

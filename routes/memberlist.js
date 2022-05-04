@@ -16,6 +16,8 @@ router.get('/users', async (req, res) =>{
     const gamersCollection = db.collection('gamers');
     const gamers = await gamersCollection.find({}).toArray();
     console.log(gamers)
+    const gamesOptions = gamers.map(g => g.games )
+    console.log(gamesOptions)
     res.render('pages/memberlist', {
         pagetitle:'Memberlist',
         gamers
