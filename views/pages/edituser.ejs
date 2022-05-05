@@ -4,33 +4,33 @@
 
     <main>
         <h1>Create user</h1>
-        <form action="" method="POST" id="edituser-form">
+        <form action="/edituser/<%=_id %>" method="POST" id="edituser-form">
             <ul>
                 <li>
                     <label for="name">Name</label>
-                    <input type="text" name="name" id="name">
+                    <input type="text" name="name" id="name" value="<%= name %>">
                 </li>
                 <li>
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email">
+                    <input type="email" name="email" id="email" value="<%= email %>">
                 </li>
                 <li>
                     <label for="phone">Phone</label>
-                    <input type="tel" name="phone" id="phone">
+                    <input type="tel" name="phone" id="phone" value="<%= phone %>">
                 </li>
                 <li>
                     <label for="joined">Joined</label>
-                    <input type="datetime-local" name="joined" id="joined">
+                    <input type="datetime-local" name="joined" id="joined" value="<%= joined %>">
                 </li>
                 <li>
                     <div>
                         <input type="button" value="+" id="add-game">
                         <label for="add-game">Add game title</label>
                     </div>
-                    <input type="text">
+                    <option value="" multiple></option>
                 </li>
                 <li>
-                    <button type="submit">Create user</button>
+                    <button type="submit">Edit</button>
                 </li>
             </ul>
         </form>

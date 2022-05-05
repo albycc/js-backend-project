@@ -14,7 +14,6 @@ const router = express.Router();
 
 router.get('/user/:id', async (req, res) =>{
     const gamer = await db.collection('gamers').findOne({_id: ObjectId(req.params.id)});
-    console.log(gamer)
     res.render('pages/user', {
         pagetitle:'User profile',
         ...gamer

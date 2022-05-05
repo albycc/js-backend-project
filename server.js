@@ -8,6 +8,7 @@ import startpageRouter from './routes/startpage.js'
 import userslistRouter from './routes/memberlist.js'
 import profileRouter from './routes/userprofile.js'
 import createRouter from './routes/createuser.js'
+import editUser from './routes/edituser.js'
 import path from 'path';
 import {dirname} from './utils/path.js'
 
@@ -24,6 +25,7 @@ app.use(startpageRouter);
 app.use(userslistRouter);
 app.use(profileRouter);
 app.use(createRouter);
+app.use(editUser);
 
 app.use((req, res, next) =>{
     res.status(404).render(path.join(dirname(), 'views/pages', '404'), {
