@@ -3,11 +3,44 @@
 
 <div class="main-content">
     <main>
-        <h1><%= name %></h1>
-        <div>
-            <p><%= joined %></p>
-            <p><%= typeof contact !== 'undefined' ? Object.values(contact).join(', ') : 'no contacts' %></p>
-            <p><%= typeof games !== 'undefined' ? games.join(', ') : 'no games listed' %></p>
+        <div class="user-background-container">
+           
+        </div>
+        <div class="user-info-container">
+
+            <div class="user-profile-section">
+                <div class="avatar-profileicon-container">
+                    <div class="avatar-icon">
+                        <img src="/img/icons/avatar_icon.svg" alt="">
+                    </div>
+                    <h1><%= name %> </h1>
+                    <span>Joined: <%= joined.slice(0, 10) %></span>
+                </div>
+            </div>
+           
+            <div class="user-profile-section">
+
+                <h2>CURRENT PLAYTHROUGH</h2>
+                <div class="current-game-field">
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="user-profile-section">
+                <h2>GAMES LIBRARY</h2>
+                <div class="games-library-row"></div>
+            </div>
+
+            <div class="user-profile-section">
+                <h2>CONTACT</h2>
+                <p><%= typeof phone !== 'undefined' ? phone : 'No phone details' %></p>
+                <p><%= typeof email !== 'undefined' ? email : 'missing email' %></p>
+            </div>
+
+            <div class="user-profile-section">
+                <a href="" class="link-button blue">EDIT PROFILE</a>
+                <a href="/deleteuser/<%- _id %>" class="link-button red">DELETE ACCOUNT</a>
+            </div>
         </div>
     </main>
 

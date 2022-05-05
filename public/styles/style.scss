@@ -1,5 +1,14 @@
+//components
+@import './components/link.scss';
+
+//layout
 @import './layout/header-footer.scss';
+
+//pages
 @import './pages/memberlist.scss';
+@import './pages/userprofile.scss';
+
+
 
 *, *::before, *::after{
     box-sizing: border-box;

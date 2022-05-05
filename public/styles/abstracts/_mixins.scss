@@ -7,11 +7,21 @@
 
 @mixin link-colour($colour, $hover-colour, $active-colour){
     color:$colour;
-    text-decoration: underline;
+    text-decoration: none;
     &:hover{
         color:$hover-colour;
     }
     &:active{
         color:$active-colour;
+    }
+}
+
+@mixin round-colour($colour, $hover-colour, $active-colour){
+    background-color: $colour;
+    &:hover{
+        background-color:$hover-colour;
+    }
+    &:active{
+        background-color:$active-colour;
     }
 }

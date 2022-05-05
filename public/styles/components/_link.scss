@@ -1,0 +1,19 @@
+@import '../abstracts/mixins.scss';
+
+a.link-button{
+    border-radius: 10px;
+    max-width: 200px;
+    width:100%;
+    margin:10px 0px;
+    padding:12px 20px;
+    text-align: center;
+    @include link-colour(white, white, white);
+    
+    &.red{
+        @include round-colour(#F9234A, #dd1e41, #ff4b6c);
+    }
+    &.blue{
+        @include round-colour(#598EF5, #4d7ad4, #78a2f7);
+
+    }
+}

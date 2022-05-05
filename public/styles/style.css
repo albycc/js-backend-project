@@ -1,3 +1,29 @@
+a.link-button {
+  border-radius: 10px;
+  max-width: 200px;
+  width: 100%;
+  margin: 10px 0px;
+  padding: 12px 20px;
+  text-align: center;
+  color: white;
+  text-decoration: none; }
+  a.link-button:hover {
+    color: white; }
+  a.link-button:active {
+    color: white; }
+  a.link-button.red {
+    background-color: #F9234A; }
+    a.link-button.red:hover {
+      background-color: #dd1e41; }
+    a.link-button.red:active {
+      background-color: #ff4b6c; }
+  a.link-button.blue {
+    background-color: #598EF5; }
+    a.link-button.blue:hover {
+      background-color: #4d7ad4; }
+    a.link-button.blue:active {
+      background-color: #78a2f7; }
+
 @use './abstracts/mixins';
 @use '../abstracts/mixins.scss' as *;
 html, body {
@@ -21,25 +47,23 @@ body {
       width: 50px;
       height: 50px;
       background-color: orange; }
-    body header nav.navigation-meny {
-      background-color: purple; }
-      body header nav.navigation-meny ul {
-        display: flex;
-        justify-content: space-around;
-        width: 100%; }
-        body header nav.navigation-meny ul li {
-          list-style-type: none; }
-          body header nav.navigation-meny ul li a {
-            display: inline-block;
-            font-size: 1.1em;
-            text-decoration: none;
-            color: #2FF3F3;
-            height: 60px;
-            line-height: 60px;
-            transition: background-image 0.3s;
-            margin: 0 5px; }
-            body header nav.navigation-meny ul li a:hover {
-              background-image: linear-gradient(#2B2D37, #40424e, #4949e4); }
+    body header nav.navigation-meny ul {
+      display: flex;
+      justify-content: space-around;
+      width: 100%; }
+      body header nav.navigation-meny ul li {
+        list-style-type: none; }
+        body header nav.navigation-meny ul li a {
+          display: inline-block;
+          font-size: 1.1em;
+          text-decoration: none;
+          color: #2FF3F3;
+          height: 60px;
+          line-height: 60px;
+          transition: background-image 0.3s;
+          margin: 0 5px; }
+          body header nav.navigation-meny ul li a:hover {
+            background-image: linear-gradient(#2B2D37, #40424e, #4949e4); }
   body div.main-content {
     display: flex;
     flex-grow: 1;
@@ -49,11 +73,9 @@ body {
       flex-direction: column;
       height: 100%;
       width: 100%;
-      align-items: center;
-      background-color: coral; }
+      align-items: center; }
     body div.main-content aside {
-      display: none;
-      background-color: yellow; }
+      display: none; }
   body footer {
     min-height: 200px;
     background-color: #28292C; }
@@ -70,7 +92,6 @@ div.search-container {
       margin: 10px 0px; }
 
 div.memberlist-container {
-  background-color: crimson;
   max-width: 700px;
   width: 100%; }
   div.memberlist-container ul {
@@ -111,7 +132,6 @@ div.memberlist-container {
 
 div.avatar-quicklist {
   width: 20%;
-  background-color: bisque;
   margin-top: 160px; }
   div.avatar-quicklist ul {
     display: flex;
@@ -137,6 +157,39 @@ div.avatar-quicklist {
     flex-direction: row; }
     div.memberlist-container ul li a div.profile-container div.avatar-row-header h2 {
       font-size: 1.9em; } }
+div.user-background-container {
+  width: 100%;
+  height: 300px;
+  background-color: #a0a0a0; }
+
+div.avatar-profileicon-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: -140px; }
+  div.avatar-profileicon-container div.avatar-icon {
+    width: 100%;
+    height: 100%;
+    max-height: 200px;
+    max-width: 200px;
+    background-color: #e0960d;
+    border-radius: 15px; }
+    div.avatar-profileicon-container div.avatar-icon img {
+      width: 100%;
+      height: 100%; }
+
+div.user-info-container {
+  display: flex;
+  flex-direction: column; }
+  div.user-info-container > div.user-profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+    background-color: #540AF1;
+    min-height: 100px; }
+
 *, *::before, *::after {
   box-sizing: border-box;
   padding: 0;
