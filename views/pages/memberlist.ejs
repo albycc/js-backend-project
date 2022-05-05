@@ -29,10 +29,14 @@
                         <label for="descending">Descending</label>
                     </li>
                     <li>
-                        <select name="games" id="games"></select>
+                        <select name="games" id="games">
+                            <% gamesOptions.forEach(game => { %>
+                                <option value=""><%= game %></option>
+                            <% }) %>
+                        </select>
                     </li>
                     <li>
-                        <input type="text" name="" id="">
+                        <input type="text" name="search-name-field" id="search-name-field">
                         <button type="submit">Search</button>
                     </li>
                 </ul>
@@ -62,4 +66,5 @@
     </main>
 </div>
 <%- include('../partials/footer') %>
+<script src="/js/memberlist.js"></script>
 <%- include('../partials/end') %>
