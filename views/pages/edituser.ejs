@@ -4,23 +4,23 @@
 
     <main>
         <h1>Create user</h1>
-        <form action="/users/register" method="POST" id="createuser-form">
+        <form action="/edituser/<%=_id %>" method="POST" id="edituser-form">
             <ul>
                 <li>
                     <label for="name">Name</label>
-                    <input type="text" name="name" id="name">
+                    <input type="text" name="name" id="name" value="<%= name %>">
                 </li>
                 <li>
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email">
+                    <input type="email" name="email" id="email" value="<%= email %>">
                 </li>
                 <li>
                     <label for="phone">Phone</label>
-                    <input type="tel" name="phone" id="phone">
+                    <input type="tel" name="phone" id="phone" value="<%= phone %>">
                 </li>
                 <li>
                     <label for="joined">Joined</label>
-                    <input type="datetime-local" name="joined" id="joined">
+                    <input type="datetime-local" name="joined" id="joined" value="<%= joined %>">
                 </li>
                 <li>
                     <div>
@@ -30,12 +30,12 @@
                     <option value="" multiple></option>
                 </li>
                 <li>
-                    <button type="submit">Create user</button>
+                    <button type="submit">Edit</button>
                 </li>
             </ul>
         </form>
     </main>
 </div>
+
 <%- include('../partials/footer') %>
-<!-- <script src="/js/form.js"></script> -->
 <%- include('../partials/end') %>

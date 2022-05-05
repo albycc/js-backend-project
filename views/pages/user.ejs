@@ -3,11 +3,61 @@
 
 <div class="main-content">
     <main>
-        <h1><%= name %></h1>
-        <div>
-            <p><%= joined %></p>
-            <p><%= typeof contact !== 'undefined' ? Object.values(contact).join(', ') : 'no contacts' %></p>
-            <p><%= typeof games !== 'undefined' ? games.join(', ') : 'no games listed' %></p>
+        <div class="user-background-container">
+           
+        </div>
+        <div class="user-info-container">
+
+            <div class="user-profile-section">
+                <div class="avatar-profileicon-container">
+                    <div class="avatar-icon">
+                        <img src="/img/icons/avatar_icon.svg" alt="">
+                    </div>
+                    <h1><%= name %> </h1>
+                    <span>Joined: <%= joined.slice(0, 10) %></span>
+                </div>
+            </div>
+           
+            <div class="user-profile-section">
+
+                <h2>CURRENT PLAYTHROUGH</h2>
+                <div class="current-game-field">
+                    <div class="game-icon">
+                        <img src="/img/icons/currentgame.svg" alt="">
+                    </div>
+                    <span><%= typeof activegame !== 'undefined' && activegame !== '' ? activegame : 'no current game' %></span>
+                </div>
+            </div>
+
+            <div class="user-profile-section">
+                <h2>GAMES LIBRARY</h2>
+                <% if(typeof games !== 'undefined'){ %>
+                    <% games.forEach(g => { %>
+                        <ul class="games-library-row">
+                            <li class="game-item">
+                                <div class="game-container">
+                                    <img src="/img/icons/game_icon.svg" alt="">
+                                    <span><%= g %></span>
+                                </div>
+                            </li>
+                        </ul>
+                    <% })}else{ %>
+                    <p>No games listed</p>
+                <% } %>
+            </div>
+
+            <div class="user-profile-section">
+                <h2>CONTACT</h2>
+                <ul class="contact-list">
+                    <li><i class="icon"></i><span><%= typeof phone !== 'undefined' ? phone : 'No phone details' %></span></li>
+                    <li><i class="icon"></i><span><%= typeof email !== 'undefined' ? email : 'missing email' %></span></li>
+                </ul>
+            </div>
+
+            <div class="user-profile-section">
+                <a href="/user/<%=_id %>/edit" class="link-button blue">EDIT PROFILE</a>
+                <a href="/deleteuser/<%=_id %>/edit" class="link-button red">DELETE ACCOUNT</a>
+            </div>
         </div>
     </main>
 

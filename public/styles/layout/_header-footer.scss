@@ -30,7 +30,6 @@ body{
             }
         }
         nav.navigation-meny{
-            background-color: purple;
             ul{
                 display: flex;
                 justify-content: space-around;
@@ -66,12 +65,10 @@ body{
             height:100%;
             width:100%;
             align-items: center;
-            background-color: coral;
 
         }
         aside{
             display:none;
-            background-color: yellow;
         }
     }
     footer{

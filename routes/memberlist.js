@@ -23,9 +23,6 @@ router.get('/users', async (req, res) =>{
     const gamers = await gamersCollection.find(findname).sort(sortparams).toArray();
     let gamesOptions = gamers.map(g =>  g.activegame ).filter(g => g !== undefined);
     gamesOptions = [...new Set(gamesOptions)]
-    console.log(gamesOptions)
-
-
 
     res.render('pages/memberlist', {
         pagetitle:'Memberlist',
