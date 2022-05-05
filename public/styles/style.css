@@ -24,6 +24,22 @@ a.link-button {
     a.link-button.blue:active {
       background-color: #78a2f7; }
 
+div.current-game-field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+  max-width: 300px;
+  background-color: #93BAF4; }
+  div.current-game-field div.game-icon img {
+    width: 50px;
+    height: 50px; }
+  div.current-game-field span {
+    color: black;
+    font-size: 1.3em;
+    margin-left: 20px; }
+
 @use './abstracts/mixins';
 @use '../abstracts/mixins.scss' as *;
 html, body {
@@ -187,8 +203,47 @@ div.user-info-container {
     flex-direction: column;
     align-items: center;
     margin: 10px 0;
-    background-color: #540AF1;
-    min-height: 100px; }
+    min-height: 100px;
+    width: 100%; }
+
+ul.games-library-row {
+  display: flex;
+  flex-direction: row;
+  width: 100%; }
+  ul.games-library-row li.game-item {
+    display: inline-block;
+    margin: 5px; }
+    ul.games-library-row li.game-item div.game-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 110px; }
+      ul.games-library-row li.game-item div.game-container img {
+        background-color: grey;
+        width: 100px;
+        height: 100px; }
+      ul.games-library-row li.game-item div.game-container span {
+        font-size: 1.1em;
+        text-align: center; }
+
+ul.contact-list {
+  list-style-type: none; }
+  ul.contact-list li {
+    margin: 5px 0px;
+    display: flex;
+    align-items: center; }
+    ul.contact-list li i.icon {
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      border-radius: 5px;
+      background-color: grey; }
+    ul.contact-list li span {
+      margin-left: 10px; }
+
+p, a, h1, h2, h3, span {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif; }
 
 *, *::before, *::after {
   box-sizing: border-box;

@@ -1,0 +1,41 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<div class="main-content">
+
+    <main>
+        <h1>Create user</h1>
+        <form action="" method="POST" id="edituser-form">
+            <ul>
+                <li>
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name">
+                </li>
+                <li>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
+                </li>
+                <li>
+                    <label for="phone">Phone</label>
+                    <input type="tel" name="phone" id="phone">
+                </li>
+                <li>
+                    <label for="joined">Joined</label>
+                    <input type="datetime-local" name="joined" id="joined">
+                </li>
+                <li>
+                    <div>
+                        <input type="button" value="+" id="add-game">
+                        <label for="add-game">Add game title</label>
+                    </div>
+                    <input type="text">
+                </li>
+                <li>
+                    <button type="submit">Create user</button>
+                </li>
+            </ul>
+        </form>
+    </main>
+</div>
+
+<%- include('../partials/footer') %>
+<%- include('../partials/end') %>
