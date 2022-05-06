@@ -1,0 +1,74 @@
+@import '../abstracts/variables.scss';
+@import '../abstracts/mixins.scss';
+
+form.form-style{
+    ul{
+        list-style-type: none;
+        li{
+            position: relative;
+            margin:30px 0px;
+            div.column{
+                display: flex;
+                flex-direction: column;
+            }
+            div.row{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+            }
+        }
+    }
+
+    label{
+        font-size: 1.3em;
+    }
+
+    input{
+        min-height:$form-input-height;
+        font-size: 1.4em;
+        margin:5px 0;
+    }
+
+    input.input-field{
+        border-radius: 15px;
+        border:none;
+        padding:10px 5px;
+        background-color: #999999;
+        color:white;
+        &::placeholder{
+            position: relative;
+            left:5px;
+            color:rgb(231, 231, 231);
+        }
+
+    }
+    label.sr-label{
+        position: absolute;
+        left:-99999px;
+        height:1px;
+        width:1px;
+        overflow: hidden;
+    }
+
+    .plus-button{
+        border-radius: $form-input-height/2;
+        border:none;
+        width:$form-input-height;
+        height:$form-input-height;
+        cursor:pointer;
+        &+label{
+            margin-left:10px;
+            cursor:pointer;
+        }
+        @include round-colour($light-blue, #5184d1, #8db9fa)
+    }
+
+    button.round-button{
+        border-radius: $form-input-height/2;
+        border: none;
+        padding:20px 15px;
+        font-size: 1.4em;
+        @include round-colour($light-blue, #5184d1, #8db9fa)
+    }
+}

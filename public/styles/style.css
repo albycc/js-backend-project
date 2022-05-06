@@ -40,6 +40,65 @@ div.current-game-field {
     font-size: 1.3em;
     margin-left: 20px; }
 
+form.form-style ul {
+  list-style-type: none; }
+  form.form-style ul li {
+    position: relative;
+    margin: 30px 0px; }
+    form.form-style ul li div.column {
+      display: flex;
+      flex-direction: column; }
+    form.form-style ul li div.row {
+      display: flex;
+      flex-direction: row;
+      align-items: center; }
+form.form-style label {
+  font-size: 1.3em; }
+form.form-style input {
+  min-height: 40px;
+  font-size: 1.4em;
+  margin: 5px 0; }
+form.form-style input.input-field {
+  border-radius: 15px;
+  border: none;
+  padding: 10px 5px;
+  background-color: #999999;
+  color: white; }
+  form.form-style input.input-field::placeholder {
+    position: relative;
+    left: 5px;
+    color: #e7e7e7; }
+form.form-style label.sr-label {
+  position: absolute;
+  left: -99999px;
+  height: 1px;
+  width: 1px;
+  overflow: hidden; }
+form.form-style .plus-button {
+  border-radius: 20px;
+  border: none;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background-color: #64A2FF; }
+  form.form-style .plus-button + label {
+    margin-left: 10px;
+    cursor: pointer; }
+  form.form-style .plus-button:hover {
+    background-color: #5184d1; }
+  form.form-style .plus-button:active {
+    background-color: #8db9fa; }
+form.form-style button.round-button {
+  border-radius: 20px;
+  border: none;
+  padding: 20px 15px;
+  font-size: 1.4em;
+  background-color: #64A2FF; }
+  form.form-style button.round-button:hover {
+    background-color: #5184d1; }
+  form.form-style button.round-button:active {
+    background-color: #8db9fa; }
+
 @use './abstracts/mixins';
 @use '../abstracts/mixins.scss' as *;
 html, body {
@@ -241,7 +300,7 @@ ul.contact-list {
     ul.contact-list li span {
       margin-left: 10px; }
 
-p, a, h1, h2, h3, span {
+p, a, h1, h2, h3, span, label {
   color: white;
   font-family: Arial, Helvetica, sans-serif; }
 

@@ -25,7 +25,7 @@ router.post('/users/register', async (req, res) =>{
     console.log('post')
     console.log(req.body)
 
-    await gamersCollection.insertOne(req.body);
+    // await gamersCollection.insertOne(req.body);
     res.redirect('/users/register')
 })
 
