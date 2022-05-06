@@ -25,3 +25,8 @@
         background-color:$active-colour;
     }
 }
+
+@mixin roundComponent($radius){
+    border:none;
+    border-radius: $radius;
+}

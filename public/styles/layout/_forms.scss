@@ -15,7 +15,9 @@ form.form-style{
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-
+            }
+            .center{
+                align-items: center;
             }
         }
     }
@@ -65,8 +67,7 @@ form.form-style{
     }
 
     button.round-button{
-        border-radius: $form-input-height/2;
-        border: none;
+        @include roundComponent($form-input-height/2);
         padding:20px 15px;
         font-size: 1.4em;
         @include round-colour($light-blue, #5184d1, #8db9fa)

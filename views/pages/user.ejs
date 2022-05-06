@@ -14,6 +14,7 @@
                         <img src="/img/icons/avatar_icon.svg" alt="">
                     </div>
                     <h1><%= name %> </h1>
+                    <p><%= typeof tagname !== 'undefined' && tagname !== '' ? '#' + tagname : 'no tag name' %></p>
                     <span>Joined: <%= joined.slice(0, 10) %></span>
                 </div>
             </div>

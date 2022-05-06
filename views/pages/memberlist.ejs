@@ -52,10 +52,13 @@
                                     <div class="avatar-icon-container">
                                         <img src="/img/icons/avatar_icon.svg" alt="">
                                     </div>
-                                    <h2><%= g.name %></h2>
+                                    <div class="profile-names">
+                                        <h2><%= g.name %></h2>
+                                        <span><%= typeof g.tagname !== 'undefined' && g.tagname !== '' ? '#' + g.tagname : 'no tag name' %></span>
+                                    </div>
                                 </div>
                                 <div class="active-game-row">
-                                    <span><%= g.hasOwnProperty('activegame') && g.activegame !== '' ? g.activegame : 'no active game' %></span>
+                                    <span><%= g.hasOwnProperty('activegame') && g.activegame !== '' ? 'Playing: '  + g.activegame : 'no active game' %></span>
                                 </div>
                             </div>
                         </a>

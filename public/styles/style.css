@@ -39,6 +39,14 @@ div.current-game-field {
     color: black;
     font-size: 1.3em;
     margin-left: 20px; }
+  div.current-game-field.small {
+    height: 45px; }
+    div.current-game-field.small div.game-icon img {
+      width: 40px;
+      height: 40px; }
+    div.current-game-field.small span {
+      font-size: 1.1em;
+      margin-left: 20px; }
 
 form.form-style ul {
   list-style-type: none; }
@@ -51,6 +59,8 @@ form.form-style ul {
     form.form-style ul li div.row {
       display: flex;
       flex-direction: row;
+      align-items: center; }
+    form.form-style ul li .center {
       align-items: center; }
 form.form-style label {
   font-size: 1.3em; }
@@ -89,8 +99,8 @@ form.form-style .plus-button {
   form.form-style .plus-button:active {
     background-color: #8db9fa; }
 form.form-style button.round-button {
-  border-radius: 20px;
   border: none;
+  border-radius: 20px;
   padding: 20px 15px;
   font-size: 1.4em;
   background-color: #64A2FF; }
@@ -173,13 +183,14 @@ div.memberlist-container {
     list-style-type: none; }
     div.memberlist-container ul li {
       margin-top: 10px; }
+      div.memberlist-container ul li + li {
+        border-top: 1px solid grey; }
       div.memberlist-container ul li a {
         color: #181818;
         text-decoration: none; }
         div.memberlist-container ul li a div.profile-container {
           display: flex;
           flex-direction: column;
-          background-color: grey;
           padding: 15px 20px;
           min-height: 100px; }
           div.memberlist-container ul li a div.profile-container div.avatar-row-header {
@@ -192,9 +203,12 @@ div.memberlist-container {
               div.memberlist-container ul li a div.profile-container div.avatar-row-header div.avatar-icon-container img {
                 width: 70px;
                 height: 70px; }
-            div.memberlist-container ul li a div.profile-container div.avatar-row-header h2 {
-              margin: 0px 25px;
-              font-size: 1.4em; }
+            div.memberlist-container ul li a div.profile-container div.avatar-row-header div.profile-names {
+              margin: 0px 25px; }
+              div.memberlist-container ul li a div.profile-container div.avatar-row-header div.profile-names h2 {
+                font-size: 1.6em; }
+              div.memberlist-container ul li a div.profile-container div.avatar-row-header div.profile-names span {
+                font-size: 0.9em; }
           div.memberlist-container ul li a div.profile-container div.active-game-row {
             display: flex;
             min-height: 60px;
@@ -203,7 +217,7 @@ div.memberlist-container {
             div.memberlist-container ul li a div.profile-container div.active-game-row span {
               font-size: 1.2em; }
           div.memberlist-container ul li a div.profile-container:hover {
-            background-color: #afafaf; }
+            background-color: #717788; }
 
 div.avatar-quicklist {
   width: 20%;
