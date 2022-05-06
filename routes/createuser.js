@@ -23,9 +23,14 @@ router.get('/users/register', (req, res) =>{
 
 router.post('/users/register', async (req, res) =>{
     console.log('post')
-    console.log(req.body)
-
-    await gamersCollection.insertOne(req.body);
+    
+    const newuser = req.body;
+    const usersGames = Array.isArray(newuser.games) ? newuser.games : typeof newuser.games !== 'undefined' ? [newuser.games] : [];
+    newuser.games = usersGames;
+    newuser.activegame = '';
+    
+    console.log(newuser)
+    await gamersCollection.insertOne(newuser);
     res.redirect('/users/register')
 })
 

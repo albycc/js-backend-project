@@ -4,38 +4,56 @@
 
     <main>
         <h1>Create user</h1>
-        <form action="/users/register" method="POST" id="createuser-form">
+        <form action="/users/register" method="POST" id="createuser-form" class="form-style">
             <ul>
                 <li>
-                    <label for="name">Name</label>
-                    <input type="text" name="name" id="name">
+                    <div class="column">
+                        <label for="name" class="sr-label">Name</label>
+                        <input type="text" name="name" id="name" class="input-field" placeholder="Name">
+                    </div>
                 </li>
                 <li>
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email">
+                    <div class="column">
+                        <label for="tagname" class="sr-label">Name</label>
+                        <input type="text" name="tagname" id="tagname" class="input-field" placeholder="#tagName">
+                    </div>
                 </li>
                 <li>
-                    <label for="phone">Phone</label>
-                    <input type="tel" name="phone" id="phone">
+                    <div class="column">
+                        <label for="email" class="sr-label">Email</label>
+                        <input type="email" name="email" id="email" class="input-field" placeholder="Email">
+                    </div>
                 </li>
                 <li>
-                    <label for="joined">Joined</label>
-                    <input type="datetime-local" name="joined" id="joined">
+                    <div class="column">
+                        <label for="phone" class="sr-label">Phone</label>
+                        <input type="tel" name="phone" id="phone" class="input-field" placeholder="Phone">
+                    </div>
                 </li>
                 <li>
-                    <div>
-                        <input type="button" value="+" id="add-game">
+                    <div class="column">
+                        <label for="joined" class="sr-label">Joined</label>
+                        <input type="date" name="joined" id="joined" class="input-field" placeholder="Date">
+                    </div>
+                </li>
+                <li>
+                    <div id="gameslist-container" class="column">
+
+                    </div>
+                    <div class="row">
+                        <input type="button" value="+" id="add-game" class="plus-button">
                         <label for="add-game">Add game title</label>
                     </div>
-                    <option value="" multiple></option>
                 </li>
                 <li>
-                    <button type="submit">Create user</button>
+                    <div class="column center">
+                        <button type="submit" class="round-button">Create user</button>
+                    </div>
                 </li>
             </ul>
         </form>
     </main>
 </div>
 <%- include('../partials/footer') %>
-<!-- <script src="/js/form.js"></script> -->
+<script src="/js/createuserform.js"></script>
 <%- include('../partials/end') %>

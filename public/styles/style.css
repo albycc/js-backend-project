@@ -39,6 +39,75 @@ div.current-game-field {
     color: black;
     font-size: 1.3em;
     margin-left: 20px; }
+  div.current-game-field.small {
+    height: 45px; }
+    div.current-game-field.small div.game-icon img {
+      width: 40px;
+      height: 40px; }
+    div.current-game-field.small span {
+      font-size: 1.1em;
+      margin-left: 20px; }
+
+form.form-style ul {
+  list-style-type: none; }
+  form.form-style ul li {
+    position: relative;
+    margin: 30px 0px; }
+    form.form-style ul li div.column {
+      display: flex;
+      flex-direction: column; }
+    form.form-style ul li div.row {
+      display: flex;
+      flex-direction: row;
+      align-items: center; }
+    form.form-style ul li .center {
+      align-items: center; }
+form.form-style label {
+  font-size: 1.3em; }
+form.form-style input {
+  min-height: 40px;
+  font-size: 1.4em;
+  margin: 5px 0; }
+form.form-style input.input-field {
+  border-radius: 15px;
+  border: none;
+  padding: 10px 5px;
+  background-color: #999999;
+  color: white; }
+  form.form-style input.input-field::placeholder {
+    position: relative;
+    left: 5px;
+    color: #e7e7e7; }
+form.form-style label.sr-label {
+  position: absolute;
+  left: -99999px;
+  height: 1px;
+  width: 1px;
+  overflow: hidden; }
+form.form-style .plus-button {
+  border-radius: 20px;
+  border: none;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background-color: #64A2FF; }
+  form.form-style .plus-button + label {
+    margin-left: 10px;
+    cursor: pointer; }
+  form.form-style .plus-button:hover {
+    background-color: #5184d1; }
+  form.form-style .plus-button:active {
+    background-color: #8db9fa; }
+form.form-style button.round-button {
+  border: none;
+  border-radius: 20px;
+  padding: 20px 15px;
+  font-size: 1.4em;
+  background-color: #64A2FF; }
+  form.form-style button.round-button:hover {
+    background-color: #5184d1; }
+  form.form-style button.round-button:active {
+    background-color: #8db9fa; }
 
 @use './abstracts/mixins';
 @use '../abstracts/mixins.scss' as *;
@@ -114,13 +183,14 @@ div.memberlist-container {
     list-style-type: none; }
     div.memberlist-container ul li {
       margin-top: 10px; }
+      div.memberlist-container ul li + li {
+        border-top: 1px solid grey; }
       div.memberlist-container ul li a {
         color: #181818;
         text-decoration: none; }
         div.memberlist-container ul li a div.profile-container {
           display: flex;
           flex-direction: column;
-          background-color: grey;
           padding: 15px 20px;
           min-height: 100px; }
           div.memberlist-container ul li a div.profile-container div.avatar-row-header {
@@ -133,9 +203,12 @@ div.memberlist-container {
               div.memberlist-container ul li a div.profile-container div.avatar-row-header div.avatar-icon-container img {
                 width: 70px;
                 height: 70px; }
-            div.memberlist-container ul li a div.profile-container div.avatar-row-header h2 {
-              margin: 0px 25px;
-              font-size: 1.4em; }
+            div.memberlist-container ul li a div.profile-container div.avatar-row-header div.profile-names {
+              margin: 0px 25px; }
+              div.memberlist-container ul li a div.profile-container div.avatar-row-header div.profile-names h2 {
+                font-size: 1.6em; }
+              div.memberlist-container ul li a div.profile-container div.avatar-row-header div.profile-names span {
+                font-size: 0.9em; }
           div.memberlist-container ul li a div.profile-container div.active-game-row {
             display: flex;
             min-height: 60px;
@@ -144,7 +217,7 @@ div.memberlist-container {
             div.memberlist-container ul li a div.profile-container div.active-game-row span {
               font-size: 1.2em; }
           div.memberlist-container ul li a div.profile-container:hover {
-            background-color: #afafaf; }
+            background-color: #717788; }
 
 div.avatar-quicklist {
   width: 20%;
@@ -241,7 +314,7 @@ ul.contact-list {
     ul.contact-list li span {
       margin-left: 10px; }
 
-p, a, h1, h2, h3, span {
+p, a, h1, h2, h3, span, label {
   color: white;
   font-family: Arial, Helvetica, sans-serif; }
 
