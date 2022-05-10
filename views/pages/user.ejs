@@ -22,27 +22,35 @@
             <div class="user-profile-section">
 
                 <h2>CURRENT PLAYTHROUGH</h2>
-                <div class="current-game-field">
-                    <div class="game-icon">
-                        <img src="/img/icons/currentgame.svg" alt="">
+                <% if(typeof activegame !== 'undefined' && activegame !== ''){ %>
+                    <div class="current-game-field">
+                        <div class="game-icon">
+                            <img src="/img/icons/currentgame.svg" alt="">
+                        </div>
+                        <span><%= activegame %></span>
                     </div>
-                    <span><%= typeof activegame !== 'undefined' && activegame !== '' ? activegame : 'no current game' %></span>
-                </div>
+                <%}else{%>
+                    <p class="margin">No current playthorugh</p>
+                <% } %>
             </div>
 
             <div class="user-profile-section">
                 <h2>GAMES LIBRARY</h2>
                 <% if(typeof games !== 'undefined'){ %>
-                    <% games.forEach(g => { %>
-                        <ul class="games-library-row">
+                    <ul class="games-library-row">
+                        <% games.forEach(g => { %>
                             <li class="game-item">
-                                <div class="game-container">
-                                    <img src="/img/icons/game_icon.svg" alt="">
-                                    <span><%= g %></span>
-                                </div>
+                                <a href="/user/<%= _id %>/addgame/<%= g %>">
+                                    <div class="game-container">
+                                        <img src="/img/icons/game_icon.svg" alt="">
+                                        <span><%= g %></span>
+                                    </div>
+
+                                </a>
                             </li>
-                        </ul>
-                    <% })}else{ %>
+                        <% }) %>
+                    </ul>
+                <% }else{ %>
                     <p>No games listed</p>
                 <% } %>
             </div>

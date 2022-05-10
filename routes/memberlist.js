@@ -16,13 +16,25 @@ router.get('/users', async (req, res) =>{
     const gamersCollection = db.collection('gamers');
     const query = req.query;
     let sortparams = {}
-    const findname = query.hasOwnProperty('search-name-field') && query['search-name-field'] !== '' ? {name:query['search-name-field']} : {}
-    if(query.hasOwnProperty('ascending') || query.hasOwnProperty('descending')){
-        sortparams.name = query.ascending === 'on' ? 1 : -1;
+    const queryFind = {};
+    if(query.hasOwnProperty('search-name-field') && query['search-name-field'] !== ''){
+        queryFind.name = query['search-name-field'];
     }
-    const gamers = await gamersCollection.find(findname).sort(sortparams).toArray();
+    if(query.hasOwnProperty('game')){
+        queryFind.activegame = query.game
+    }
+    // const findname = query.hasOwnProperty('search-name-field') && query['search-name-field'] !== '' ? {name:query['search-name-field']} : {}
+
+    //find sort value
+    if(query.hasOwnProperty('sort')){
+        sortparams.name = req.query.sort;
+    }
+    console.log('queryFind', queryFind)
+    const gamers = await gamersCollection.find(queryFind).sort(sortparams).toArray();
     let gamesOptions = gamers.map(g =>  g.activegame ).filter(g => g !== undefined);
-    gamesOptions = [...new Set(gamesOptions)]
+    gamesOptions = [...new Set(gamesOptions)].filter(g => g != '')
+
+    console.log(gamesOptions)
 
     res.render('pages/memberlist', {
         pagetitle:'Memberlist',

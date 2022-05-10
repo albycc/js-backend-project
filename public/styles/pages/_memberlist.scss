@@ -1,4 +1,5 @@
 @import '../abstracts/variables.scss';
+@import '../abstracts/mixins.scss';
 
 div.search-container{
     width:100%;
@@ -11,7 +12,41 @@ div.search-container{
         ul{
             list-style-type: none;
             li{
+                display: flex;
+                align-items: center;
                 margin:10px 0px;
+                & > *{
+                    margin:0 10px;
+                }
+                input, select, button{
+                    height:40px;
+                    border:none;
+                    border-radius: 10px;
+                    background-color: rgb(235, 235, 235);
+                    font-size:1.3em;
+                }
+                input[type="checkbox"]{
+                    border:none;
+                    width:20px;
+                    height:20px;
+                    background-color: rgb(235, 235, 235);
+                }
+                .input-grp{
+                    display: flex;
+                    align-items: center;
+                    & * {
+                        margin:0 3px;
+                    }
+                }
+
+                button{
+                    border-radius: 5px;
+                    border: none;
+                    padding:0 10px;
+                    font-size: 1.4em;
+                    cursor:pointer;
+                    @include round-colour($light-blue, #5184d1, #8db9fa)
+                }
             }
         }
     }
@@ -20,63 +55,66 @@ div.search-container{
 div.memberlist-container{
     max-width:$memberlist-width;
     width:100%;
+    &.margin-top{
+        margin-top:40px;
+    }
 
-    ul{
-        list-style-type: none;
-        li{
-            margin-top:10px;
-            & + li{
-                border-top: 1px solid grey;
-            }
-            a{
-                color:rgb(24, 24, 24);
-                text-decoration: none;
-                div.profile-container{
+}
+ul.memberlist{
+    list-style-type: none;
+    li{
+        margin-top:10px;
+        & + li{
+            border-top: 1px solid grey;
+        }
+        a{
+            color:rgb(24, 24, 24);
+            text-decoration: none;
+            div.profile-container{
+                display: flex;
+                flex-direction: column;
+                padding:15px 20px;
+                min-height:100px;
+                div.avatar-row-header{
                     display: flex;
                     flex-direction: column;
-                    padding:15px 20px;
-                    min-height:100px;
-                    div.avatar-row-header{
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        div.avatar-icon-container{
-                            background-color: orange;
-                            border-radius: 9px;
-                            img{
-                                width:70px;
-                                height:70px;
-                            }
-
+                    align-items: center;
+                    div.avatar-icon-container{
+                        background-color: orange;
+                        border-radius: 9px;
+                        img{
+                            width:70px;
+                            height:70px;
                         }
-                        div.profile-names{
-                            margin:0px 25px;
-                            h2{
-                                font-size:1.6em
-                            }
-                            span{
-                                font-size:0.9em
-                            }
 
-                        }
                     }
-
-                    div.active-game-row{
-                        display: flex;
-                        min-height:60px;
-                        align-items: center;
-                        padding: 0 20px;
+                    div.profile-names{
+                        margin:0px 25px;
+                        h2{
+                            font-size:1.6em
+                        }
                         span{
-                            font-size: 1.2em;
+                            font-size:0.9em
                         }
-                    }
 
-                    &:hover{
-                        background-color: #717788;
                     }
-
-    
                 }
+
+                div.active-game-row{
+                    display: flex;
+                    min-height:60px;
+                    align-items: center;
+                    padding: 0 20px;
+                    span{
+                        font-size: 1.2em;
+                    }
+                }
+
+                &:hover{
+                    background-color: #717788;
+                }
+
+
             }
         }
     }

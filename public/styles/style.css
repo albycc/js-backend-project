@@ -154,12 +154,12 @@ body {
       width: 100%; }
       body header nav.navigation-meny ul li {
         list-style-type: none;
-        margin: 0 10px; }
+        margin: 0 15px; }
         body header nav.navigation-meny ul li a {
           display: inline-block;
           font-size: 0.9em;
           text-decoration: none;
-          color: #2FF3F3;
+          color: #ffffff;
           height: 60px;
           line-height: 60px;
           transition: background-image 0.3s; }
@@ -168,8 +168,7 @@ body {
   body div.main-content {
     display: flex;
     flex-grow: 1;
-    background-color: #555A69;
-    margin-top: 50px; }
+    background-color: #555A69; }
     body div.main-content main {
       display: flex;
       flex-direction: column;
@@ -282,50 +281,84 @@ div.search-container {
   div.search-container form ul {
     list-style-type: none; }
     div.search-container form ul li {
+      display: flex;
+      align-items: center;
       margin: 10px 0px; }
+      div.search-container form ul li > * {
+        margin: 0 10px; }
+      div.search-container form ul li input, div.search-container form ul li select, div.search-container form ul li button {
+        height: 40px;
+        border: none;
+        border-radius: 10px;
+        background-color: #ebebeb;
+        font-size: 1.3em; }
+      div.search-container form ul li input[type="checkbox"] {
+        border: none;
+        width: 20px;
+        height: 20px;
+        background-color: #ebebeb; }
+      div.search-container form ul li .input-grp {
+        display: flex;
+        align-items: center; }
+        div.search-container form ul li .input-grp * {
+          margin: 0 3px; }
+      div.search-container form ul li button {
+        border-radius: 5px;
+        border: none;
+        padding: 0 10px;
+        font-size: 1.4em;
+        cursor: pointer;
+        background-color: #64A2FF; }
+        div.search-container form ul li button:hover {
+          background-color: #5184d1; }
+        div.search-container form ul li button:active {
+          background-color: #8db9fa; }
 
 div.memberlist-container {
   max-width: 700px;
   width: 100%; }
-  div.memberlist-container ul {
-    list-style-type: none; }
-    div.memberlist-container ul li {
-      margin-top: 10px; }
-      div.memberlist-container ul li + li {
-        border-top: 1px solid grey; }
-      div.memberlist-container ul li a {
-        color: #181818;
-        text-decoration: none; }
-        div.memberlist-container ul li a div.profile-container {
+  div.memberlist-container.margin-top {
+    margin-top: 40px; }
+
+ul.memberlist {
+  list-style-type: none; }
+  ul.memberlist li {
+    margin-top: 10px; }
+    ul.memberlist li + li {
+      border-top: 1px solid grey; }
+    ul.memberlist li a {
+      color: #181818;
+      text-decoration: none; }
+      ul.memberlist li a div.profile-container {
+        display: flex;
+        flex-direction: column;
+        padding: 15px 20px;
+        min-height: 100px; }
+        ul.memberlist li a div.profile-container div.avatar-row-header {
           display: flex;
           flex-direction: column;
-          padding: 15px 20px;
-          min-height: 100px; }
-          div.memberlist-container ul li a div.profile-container div.avatar-row-header {
-            display: flex;
-            flex-direction: column;
-            align-items: center; }
-            div.memberlist-container ul li a div.profile-container div.avatar-row-header div.avatar-icon-container {
-              background-color: orange;
-              border-radius: 9px; }
-              div.memberlist-container ul li a div.profile-container div.avatar-row-header div.avatar-icon-container img {
-                width: 70px;
-                height: 70px; }
-            div.memberlist-container ul li a div.profile-container div.avatar-row-header div.profile-names {
-              margin: 0px 25px; }
-              div.memberlist-container ul li a div.profile-container div.avatar-row-header div.profile-names h2 {
-                font-size: 1.6em; }
-              div.memberlist-container ul li a div.profile-container div.avatar-row-header div.profile-names span {
-                font-size: 0.9em; }
-          div.memberlist-container ul li a div.profile-container div.active-game-row {
-            display: flex;
-            min-height: 60px;
-            align-items: center;
-            padding: 0 20px; }
-            div.memberlist-container ul li a div.profile-container div.active-game-row span {
-              font-size: 1.2em; }
-          div.memberlist-container ul li a div.profile-container:hover {
-            background-color: #717788; }
+          align-items: center; }
+          ul.memberlist li a div.profile-container div.avatar-row-header div.avatar-icon-container {
+            background-color: orange;
+            border-radius: 9px; }
+            ul.memberlist li a div.profile-container div.avatar-row-header div.avatar-icon-container img {
+              width: 70px;
+              height: 70px; }
+          ul.memberlist li a div.profile-container div.avatar-row-header div.profile-names {
+            margin: 0px 25px; }
+            ul.memberlist li a div.profile-container div.avatar-row-header div.profile-names h2 {
+              font-size: 1.6em; }
+            ul.memberlist li a div.profile-container div.avatar-row-header div.profile-names span {
+              font-size: 0.9em; }
+        ul.memberlist li a div.profile-container div.active-game-row {
+          display: flex;
+          min-height: 60px;
+          align-items: center;
+          padding: 0 20px; }
+          ul.memberlist li a div.profile-container div.active-game-row span {
+            font-size: 1.2em; }
+        ul.memberlist li a div.profile-container:hover {
+          background-color: #717788; }
 
 div.avatar-quicklist {
   width: 20%;
@@ -378,22 +411,29 @@ div.avatar-profileicon-container {
 
 div.user-info-container {
   display: flex;
-  flex-direction: column; }
-  div.user-info-container > div.user-profile-section {
+  flex-direction: column;
+  width: 100%; }
+  div.user-info-container div.user-profile-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 10px 0;
     min-height: 100px;
     width: 100%; }
+    div.user-info-container div.user-profile-section .margin {
+      margin: 15px 0; }
 
 ul.games-library-row {
   display: flex;
   flex-direction: row;
-  width: 100%; }
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap; }
   ul.games-library-row li.game-item {
     display: inline-block;
     margin: 5px; }
+    ul.games-library-row li.game-item a {
+      text-decoration: none; }
     ul.games-library-row li.game-item div.game-container {
       display: flex;
       flex-direction: column;
@@ -404,7 +444,7 @@ ul.games-library-row {
         width: 100px;
         height: 100px; }
       ul.games-library-row li.game-item div.game-container span {
-        font-size: 1.1em;
+        font-size: 0.9em;
         text-align: center; }
 
 ul.contact-list {
