@@ -17,33 +17,40 @@
         </div>
     </aside>
     <main>
-        <h1>Memberlist</h1>
-        <div class="search-container">
-            <form action="">
-                <ul>
-                    <li>
-                        <span>Order: </span>
-                        <input type="checkbox" name="ascending" id="ascending">
-                        <label for="ascending">Ascending</label>
-                        <input type="checkbox" name="descending" id="descending">
-                        <label for="descending">Descending</label>
-                    </li>
-                    <li>
-                        <select name="games" id="games">
-                            <% gamesOptions.forEach(game => { %>
-                                <option value=""><%= game %></option>
-                            <% }) %>
-                        </select>
-                    </li>
-                    <li>
-                        <input type="text" name="search-name-field" id="search-name-field">
-                        <button type="submit">Search</button>
-                    </li>
-                </ul>
-            </form>
+        <div class="memberlist-container margin-top">
+            <h1>Memberlist</h1>
+            <div class="search-container">
+                <form action="/users" method="GET">
+                    <ul>
+                        <li>
+                            <span>Order: </span>
+                            <span class="input-grp">
+                                <input type="checkbox" name="sort" id="ascending" value="1">
+                                <label for="ascending">Ascending</label>
+                            </span>
+                            <span class="input-grp">
+                                <input type="checkbox" name="sort" id="descending" value="-1">
+                                <label for="descending">Descending</label>
+                            </span>
+                        </li>
+                        <li>
+                            <select name="game" id="games">
+                                <option value="" disabled selected>-Choose game-</option>
+                                <% gamesOptions.forEach(game => { %>
+                                    <option value="<%= game %>"><%= game %></option>
+                                <% }) %>
+                            </select>
+                        </li>
+                        <li>
+                            <input type="text" name="search-name-field" id="search-name-field">
+                            <button type="submit">Search</button>
+                        </li>
+                    </ul>
+                </form>
+            </div>
         </div>
         <div class="memberlist-container">
-            <ul>
+            <ul class="memberlist">
                 <% gamers.forEach(g => { %>
                     <li>
                         <a href="/user/<%= g._id %>" id="profile_<%= g._id %>">

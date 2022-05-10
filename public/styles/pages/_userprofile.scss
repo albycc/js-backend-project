@@ -30,24 +30,35 @@ div.avatar-profileicon-container{
 div.user-info-container{
     display: flex;
     flex-direction: column;
+    width:100%;
     
-    & > div.user-profile-section{
+    & div.user-profile-section{
         display: flex;
         flex-direction: column;
         align-items: center;
         margin:10px 0;
         min-height:100px;
         width:100%;
+
+        .margin{
+            margin:15px 0;
+        }
     }
 }
 
 ul.games-library-row{
     display:flex;
     flex-direction: row;
+    justify-content: center;
     width:100%;
+    flex-wrap: wrap;
     li.game-item{
         display:inline-block;
         margin:5px;
+        a{
+            text-decoration: none;
+
+        }
         div.game-container{
             display: flex;
             flex-direction: column;
@@ -59,7 +70,7 @@ ul.games-library-row{
                 height:100px;
             }
             span{
-                font-size: 1.1em;
+                font-size: 0.9em;
                 text-align: center;
             }
 

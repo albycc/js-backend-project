@@ -59,13 +59,13 @@ body{
                 width:100%;
                 li{
                     list-style-type: none;
-                    margin:0 10px;
+                    margin:0 15px;
 
                     a{
                         display: inline-block;
                         font-size: 0.9em;
                         text-decoration: none;
-                        color:#2FF3F3;
+                        color:#ffffff;
                         height: $header-height;
                         line-height: $header-height;
                         transition: background-image 0.3s;
@@ -81,7 +81,6 @@ body{
         display: flex;
         flex-grow: 1;
         background-color: #555A69;
-        margin-top:50px;
 
         main{
             display:flex;
