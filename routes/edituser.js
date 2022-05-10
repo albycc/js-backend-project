@@ -26,9 +26,14 @@ router.get('/user/:id/edit', async(req, res) =>{
 })
 
 router.post('/edituser/:id', async(req, res) =>{
-    console.log(req.body)
-    console.log(req.params.id)
-    await gamersCollection.updateOne({_id:ObjectId(req.params.id)}, {$set:req.body});
+
+    const newuser = req.body;
+    const usersGames = Array.isArray(newuser.games) ? newuser.games : typeof newuser.games !== 'undefined' ? [newuser.games] : [];
+    newuser.games = usersGames;
+
+    console.log(newuser)
+
+    await gamersCollection.updateOne({_id:ObjectId(req.params.id)}, {$set:newuser});
 
     gamer = await gamersCollection.findOne({_id: ObjectId(req.params.id)});
     res.render('pages/user', {
