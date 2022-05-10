@@ -7,24 +7,34 @@
         <form action="/edituser/<%=_id %>" method="POST" id="edituser-form" class="form-style">
             <ul>
                 <li>
-                    <label for="name" class="sr-label">Name</label>
-                    <input type="text" name="name" id="name" value="<%= name %>" class="input-field" placeholder="Name">
+                    <div class="column">
+                        <label for="name" class="sr-label">Name</label>
+                        <input type="text" name="name" id="name" value="<%= name %>" class="input-field" placeholder="Name">
+                    </div>
                 </li>
                 <li>
-                    <label for="tagname" class="sr-label">Name</label>
-                    <input type="text" name="tagname" id="tagname" class="input-field" placeholder="#tagName">
+                    <div class="column">
+                        <label for="tagname" class="sr-label">Name</label>
+                        <input type="text" name="tagname" id="tagname" class="input-field" placeholder="#tagName">
+                    </div>
                 </li>
                 <li>
-                    <label for="email" class="sr-label">Email</label>
-                    <input type="email" name="email" id="email" value="<%= email %>" class="input-field" placeholder="Email">
+                    <div class="column">
+                        <label for="email" class="sr-label">Email</label>
+                        <input type="email" name="email" id="email" value="<%= email %>" class="input-field" placeholder="Email">
+                    </div>
                 </li>
                 <li>
-                    <label for="phone" class="sr-label">Phone</label>
-                    <input type="tel" name="phone" id="phone" value="<%= phone %>" class="input-field" placeholder="Phone">
+                    <div class="column">
+                        <label for="phone" class="sr-label">Phone</label>
+                        <input type="tel" name="phone" id="phone" value="<%= phone %>" class="input-field" placeholder="Phone">
+                    </div>
                 </li>
                 <li>
-                    <label for="joined" class="sr-label">Joined</label>
-                    <input type="date" name="joined" id="joined" value="<%= joined %>" class="input-field">
+                    <div class="column">
+                        <label for="joined" class="sr-label">Joined</label>
+                        <input type="date" name="joined" id="joined" value="<%= joined %>" class="input-field">
+                    </div>
                 </li>
                 <li>
                     <div id="gameslist-container" class="column">
