@@ -6,6 +6,10 @@ html, body{
     height:100%;
 }
 
+body{
+    background-color: #555A69;
+}
+
 html{
     overflow-y: scroll;
 }
@@ -22,13 +26,32 @@ body{
         min-height:$header-height;
         background-color: #2B2D37;
 
-        span.header-icon{
-            a > .cube{
-                width:50px;
-                height:50px;
-                background-color: orange;
+        .navigation-start{
+            display: flex;
+            align-items: center;
+            a{
+                display: flex;
+                align-items: center;
+                text-decoration: none;
             }
+            span.header-icon{
+                .icon{
+                    width:50px;
+                    height:50px;
+                    background-color: rgb(217, 252, 138);
+                    margin:auto 5px;
+                }
+            }
+
+            .header-title{
+                display: none;
+                font-size:1.3em;
+                color:rgb(253, 78, 24);
+                margin-left:10px;
+            }
+
         }
+
         nav.navigation-meny{
             ul{
                 display: flex;
@@ -36,16 +59,16 @@ body{
                 width:100%;
                 li{
                     list-style-type: none;
+                    margin:0 10px;
 
                     a{
                         display: inline-block;
-                        font-size: 1.1em;
+                        font-size: 0.9em;
                         text-decoration: none;
                         color:#2FF3F3;
                         height: $header-height;
                         line-height: $header-height;
                         transition: background-image 0.3s;
-                        margin:0 5px;
                         &:hover{
                             background-image: linear-gradient(#2B2D37, #40424e, rgb(73, 73, 228));
                         }
@@ -58,6 +81,7 @@ body{
         display: flex;
         flex-grow: 1;
         background-color: #555A69;
+        margin-top:50px;
 
         main{
             display:flex;
@@ -72,11 +96,76 @@ body{
         }
     }
     footer{
-        min-height: 200px;
+        font-family: 'Courier New', Courier, monospace;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         background-color: #28292C;
+        color:rgb(148, 148, 148);
+        padding:40px 20px;
+        ul{
+            list-style-type: none;
+
+        }
+
+        .footer-content{
+            ul.contact-list{
+                li{
+                    display: block;
+                    margin:20px 10px;
+                }
+            }
+            .sm-list{
+                li{
+                    display: block;
+                    
+                    img{
+                        width:50px;
+                        height:50px;
+                    }
+                }
+            }
+        }
     }
 }
 
 @media screen and(min-width:$smart-phones-width){
+    body{
+        header{
+            .navigation-start{
+                .header-title{
+                    display: inline-block;
+                }
 
+            }
+
+            nav.navigation-meny{
+                ul{
+                    li{
+                        a{
+                            font-size: 1.1em;
+                        }
+                    }
+                }
+            }
+        }
+
+        footer{
+            .footer-content{
+                ul.contact-list{
+                    li{
+                        display: inline-block;
+                    }
+                }
+                .sm-list{
+                    li{
+                        display: inline-block;
+                        margin:0px 30px;
+                    }
+                }
+
+            }
+
+        }
+    }
 }
