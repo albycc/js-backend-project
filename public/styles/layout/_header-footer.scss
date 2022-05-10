@@ -6,6 +6,10 @@ html, body{
     height:100%;
 }
 
+body{
+    background-color: #555A69;
+}
+
 html{
     overflow-y: scroll;
 }
@@ -22,13 +26,27 @@ body{
         min-height:$header-height;
         background-color: #2B2D37;
 
-        span.header-icon{
-            a > .cube{
-                width:50px;
-                height:50px;
-                background-color: orange;
+        .navigation-start{
+            display: flex;
+            align-items: center;
+
+            span.header-icon{
+                a > .cube{
+                    width:50px;
+                    height:50px;
+                    background-color: orange;
+                    margin:auto 5px;
+                }
+            }
+
+            .header-title{
+                display: none;
+                font-size:1.3em;
+                color:rgb(129, 116, 250);
+                margin-left:10px;
             }
         }
+
         nav.navigation-meny{
             ul{
                 display: flex;
@@ -39,7 +57,7 @@ body{
 
                     a{
                         display: inline-block;
-                        font-size: 1.1em;
+                        font-size: 0.9em;
                         text-decoration: none;
                         color:#2FF3F3;
                         height: $header-height;
@@ -58,6 +76,7 @@ body{
         display: flex;
         flex-grow: 1;
         background-color: #555A69;
+        margin-top:50px;
 
         main{
             display:flex;
@@ -78,5 +97,24 @@ body{
 }
 
 @media screen and(min-width:$smart-phones-width){
+    body{
+        header{
+            .navigation-start{
+                .header-title{
+                    display: inline-block;
+                }
 
+            }
+
+            nav.navigation-meny{
+                ul{
+                    li{
+                        a{
+                            font-size: 1.1em;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
