@@ -1,18 +1,11 @@
-let gamecount = 1;
-const form = document.getElementById('createuser-form');
+const editForm = $('#edituser-form')
 
-$('#add-game').on('click', ()=>{
-    console.log('add game title');
+console.log(editForm)
 
-    $('#gameslist-container').append(`<input type="text" class="input-field" name="games" placeholder="Game title">`);
-
-
-})
-
-$('#createuser-form').on('submit', async(e)=>{
+$('#edituser-form').on('submit', async(e)=>{
     e.preventDefault();
 
-    const formData = new FormData(document.getElementById('createuser-form'))
+    const formData = new FormData(document.getElementById('edituser-form'))
 
     const data = {}
 
@@ -24,11 +17,13 @@ $('#createuser-form').on('submit', async(e)=>{
         data[key] = formData.get(key)
     }
 
+
+    const id = editForm.data('id')
+
     data.games = [];
     data.games = Array.from(document.querySelectorAll('.input-field[name="games"]')).map(input => input.value).filter(game => game !== '')
 
-
-    await fetch('/users/register', {
+    await fetch(`/edituser/${id}`, {
         method:'POST',
         headers:{
             'Accept': 'application/json',
@@ -38,14 +33,20 @@ $('#createuser-form').on('submit', async(e)=>{
     })
     .then(response => {
         if(response.status == 200){
-            alert('User created succesful')
-            $('.input-field[name="games"]').remove()
+            alert('Updated user')
+            window.location.href = `http://localhost:3000/user/${id}`
         }
     })
     .catch(err=>{
         console.log(err)
-    });
+    })
 
-    form.reset()
+})
+
+$('#add-game').on('click', ()=>{
+    console.log('add game title');
+
+    $('#gameslist-container').append(`<input type="text" class="input-field" name="games" placeholder="Game title">`);
+
 
 })

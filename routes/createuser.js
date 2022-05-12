@@ -25,11 +25,13 @@ router.post('/users/register', async (req, res) =>{
     console.log('post')
     
     const newuser = req.body;
-    const usersGames = Array.isArray(newuser.games) ? newuser.games : typeof newuser.games !== 'undefined' ? [newuser.games] : [];
-    newuser.games = usersGames;
+    console.log('req.body',req.body)
+
+    // const usersGames = Array.isArray(newuser.games) ? newuser.games : typeof newuser.games !== 'undefined' ? [newuser.games] : [];
+    // newuser.games = usersGames;
     newuser.activegame = '';
     
-    console.log(newuser)
+    console.log('newuser', newuser)
     await gamersCollection.insertOne(newuser);
     res.redirect('/users/register')
 })

@@ -22,7 +22,6 @@ router.get('/user/:id', async (req, res) =>{
 })
 
 router.get('/user/:id/addgame/:game', async (req, res) =>{
-    console.log(req.params);
 
     await gamersCollection.updateOne({_id: ObjectId(req.params.id)}, {$set:{activegame:req.params.game}});
     res.redirect(`/user/${req.params.id}`)

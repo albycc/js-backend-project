@@ -70,6 +70,7 @@ form.form-style{
         @include roundComponent($form-input-height/2);
         padding:20px 15px;
         font-size: 1.4em;
+        cursor: pointer;
         @include round-colour($light-blue, #5184d1, #8db9fa)
     }
 }
