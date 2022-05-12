@@ -7,8 +7,9 @@
                 <% gamers.forEach(g => { %>
                     <li>
                         <a href="#profile_<%= g._id %>">
-                            <div>
-                                <img src="/img/icons/avatar_icon.svg" alt="">
+                            <div class="quick-box">
+                                <div class="note">#<%= g.tagname %></div>
+                                <img src="/img/icons/avatar_icon.svg" alt="<%= g.name %>'s avatar icon">
                             </div>
                         </a>
                     </li>
@@ -57,7 +58,7 @@
                             <div class="profile-container">
                                 <div class="avatar-row-header">
                                     <div class="avatar-icon-container">
-                                        <img src="/img/icons/avatar_icon.svg" alt="">
+                                        <img src="/img/icons/avatar_icon.svg" alt="<%= g.name %>'s avatar icon">
                                     </div>
                                     <div class="profile-names">
                                         <h2><%= g.name %></h2>

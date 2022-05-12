@@ -131,13 +131,30 @@ div.avatar-quicklist{
         li{
             margin:10px 30px;
             a{
-                div{
+                div.quick-box{
+                    position: relative;
                     border-radius: 10px;
                     background-color: yellow;
                     img{
                         width:$quicklist-avatar-size;
                         height:$quicklist-avatar-size;
 
+                    }
+                    div.note{
+                        display:none;
+                        top:20px;
+                        left:$quicklist-avatar-size + 10px;
+                        position: absolute;
+                        padding: 5px 15px 5px 5px;
+                        height:30px;
+                        color:black;
+                        background-color: rgb(255, 255, 159);
+                        white-space: nowrap;
+                    }
+                    &:hover{
+                        & div.note{
+                            display: block;
+                        }
                     }
 
                 }

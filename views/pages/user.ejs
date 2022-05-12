@@ -11,7 +11,7 @@
             <div class="user-profile-section">
                 <div class="avatar-profileicon-container">
                     <div class="avatar-icon">
-                        <img src="/img/icons/avatar_icon.svg" alt="">
+                        <img src="/img/icons/avatar_icon.svg" alt="user's image">
                     </div>
                     <h1><%= name %> </h1>
                     <p><%= typeof tagname !== 'undefined' && tagname !== '' ? '#' + tagname : 'no tag name' %></p>
@@ -25,7 +25,7 @@
                 <% if(typeof activegame !== 'undefined' && activegame !== ''){ %>
                     <div class="current-game-field">
                         <div class="game-icon">
-                            <img src="/img/icons/currentgame.svg" alt="">
+                            <img src="/img/icons/currentgame.svg" alt="cover of current game ">
                         </div>
                         <span><%= activegame %></span>
                     </div>
@@ -36,13 +36,13 @@
 
             <div class="user-profile-section">
                 <h2>GAMES LIBRARY</h2>
-                <% if(typeof games !== 'undefined'){ %>
+                <% if(games.length > 0){ %>
                     <ul class="games-library-row">
                         <% games.forEach(g => { %>
                             <li class="game-item">
                                 <a href="/user/<%= _id %>/addgame/<%= g %>">
                                     <div class="game-container">
-                                        <img src="/img/icons/game_icon.svg" alt="">
+                                        <img src="/img/icons/game_icon.svg" alt="games cover">
                                         <span><%= g %></span>
                                     </div>
 
@@ -58,8 +58,8 @@
             <div class="user-profile-section">
                 <h2>CONTACT</h2>
                 <ul class="contact-list">
-                    <li><i class="icon"></i><span><%= typeof phone !== 'undefined' ? phone : 'No phone details' %></span></li>
-                    <li><i class="icon"></i><span><%= typeof email !== 'undefined' ? email : 'missing email' %></span></li>
+                    <li><i class="icon phone"></i><span><%= typeof phone !== 'undefined' ? phone : 'No phone details' %></span></li>
+                    <li><i class="icon email"></i><span><%= typeof email !== 'undefined' ? email : 'missing email' %></span></li>
                 </ul>
             </div>
 

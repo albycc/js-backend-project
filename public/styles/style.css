@@ -103,6 +103,7 @@ form.form-style button.round-button {
   border-radius: 20px;
   padding: 20px 15px;
   font-size: 1.4em;
+  cursor: pointer;
   background-color: #64A2FF; }
   form.form-style button.round-button:hover {
     background-color: #5184d1; }
@@ -370,12 +371,25 @@ div.avatar-quicklist {
     list-style-type: none; }
     div.avatar-quicklist ul li {
       margin: 10px 30px; }
-      div.avatar-quicklist ul li a div {
+      div.avatar-quicklist ul li a div.quick-box {
+        position: relative;
         border-radius: 10px;
         background-color: yellow; }
-        div.avatar-quicklist ul li a div img {
+        div.avatar-quicklist ul li a div.quick-box img {
           width: 60px;
           height: 60px; }
+        div.avatar-quicklist ul li a div.quick-box div.note {
+          display: none;
+          top: 20px;
+          left: 70px;
+          position: absolute;
+          padding: 5px 15px 5px 5px;
+          height: 30px;
+          color: black;
+          background-color: #ffff9f;
+          white-space: nowrap; }
+        div.avatar-quicklist ul li a div.quick-box:hover div.note {
+          display: block; }
 
 @media screen and (min-width: 390px) {
   body div.main-content aside {
@@ -458,7 +472,12 @@ ul.contact-list {
       width: 35px;
       height: 35px;
       border-radius: 5px;
-      background-color: grey; }
+      background-color: grey;
+      border: 3px solid grey; }
+      ul.contact-list li i.icon.phone {
+        background-image: url("../../img/icons/phone-solid.svg"); }
+      ul.contact-list li i.icon.email {
+        background-image: url("../../img/icons/at-solid.svg"); }
     ul.contact-list li span {
       margin-left: 10px; }
 

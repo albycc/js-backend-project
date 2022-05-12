@@ -3,8 +3,8 @@
 <div class="main-content">
 
     <main>
-        <h1>Create user</h1>
-        <form action="/edituser/<%=_id %>" method="POST" id="edituser-form" class="form-style">
+        <h1>Edit user</h1>
+        <form action="/edituser/<%=_id %>" method="POST" id="edituser-form" class="form-style" data-id="<%= _id %>">
             <ul>
                 <li>
                     <div class="column">
@@ -15,7 +15,7 @@
                 <li>
                     <div class="column">
                         <label for="tagname" class="sr-label">Name</label>
-                        <input type="text" name="tagname" id="tagname" class="input-field" placeholder="#tagName">
+                        <input type="text" name="tagname" id="tagname" value="<%= tagname %>" class="input-field" placeholder="#tagName">
                     </div>
                 </li>
                 <li>
@@ -60,5 +60,5 @@
 </div>
 
 <%- include('../partials/footer') %>
-<script src="/js/createuserform.js"></script>
+<script src="/js/edituserform.js"></script>
 <%- include('../partials/end') %>

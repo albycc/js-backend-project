@@ -90,6 +90,13 @@ ul.contact-list{
             height:35px;
             border-radius: 5px;
             background-color: grey;
+            border:3px solid grey;
+            &.phone{
+                background-image: url('../../img/icons/phone-solid.svg');
+            }
+            &.email{
+                background-image: url('../../img/icons/at-solid.svg');
+            }
         }
         span{
             margin-left:10px;
