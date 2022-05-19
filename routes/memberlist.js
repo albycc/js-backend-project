@@ -4,11 +4,7 @@ Author: Richard Walton
 */
 
 import express from "express";
-import {MongoClient} from 'mongodb';
-
-const client = new MongoClient('mongodb://localhost:27017');
-await client.connect();
-const db = client.db('jsbackend');
+import db from '../db/connect.js'
 
 const router = express.Router();
 
@@ -29,12 +25,9 @@ router.get('/users', async (req, res) =>{
     if(query.hasOwnProperty('sort')){
         sortparams.name = req.query.sort;
     }
-    console.log('queryFind', queryFind)
     const gamers = await gamersCollection.find(queryFind).sort(sortparams).toArray();
     let gamesOptions = gamers.map(g =>  g.activegame ).filter(g => g !== undefined);
     gamesOptions = [...new Set(gamesOptions)].filter(g => g != '')
-
-    console.log(gamesOptions)
 
     res.render('pages/memberlist', {
         pagetitle:'Memberlist',
