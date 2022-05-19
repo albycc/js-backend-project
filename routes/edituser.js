@@ -4,11 +4,8 @@ Author: Richard Walton
 */
 
 import express from 'express';
-import {MongoClient, ObjectId} from 'mongodb'
-
-const client = new MongoClient('mongodb://127.0.0.1:27017')
-await client.connect();
-const db = client.db('jsbackend');
+import db from '../db/connect.js'
+import { ObjectId } from '../db/connect.js';
 const gamersCollection = await db.collection('gamers');
 
 let gamer;
@@ -30,8 +27,6 @@ router.post('/edituser/:id', async(req, res) =>{
     const newuser = req.body;
     // const usersGames = Array.isArray(newuser.games) ? newuser.games : typeof newuser.games !== 'undefined' ? [newuser.games] : [];
     // newuser.games = usersGames;
-
-    console.log('edituser',newuser)
 
     await gamersCollection.updateOne({_id:ObjectId(req.params.id)}, {$set:newuser});
 

@@ -4,11 +4,7 @@ Author: Richard Walton
 */
 
 import express from "express";
-import {MongoClient} from 'mongodb';
-
-const client = new MongoClient('mongodb://127.0.0.1:27017');
-await client.connect();
-const db = client.db('jsbackend')
+import db from '../db/connect.js';
 const gamersCollection = db.collection('gamers');
 
 
@@ -25,13 +21,11 @@ router.post('/users/register', async (req, res) =>{
     console.log('post')
     
     const newuser = req.body;
-    console.log('req.body',req.body)
 
     // const usersGames = Array.isArray(newuser.games) ? newuser.games : typeof newuser.games !== 'undefined' ? [newuser.games] : [];
     // newuser.games = usersGames;
     newuser.activegame = '';
     
-    console.log('newuser', newuser)
     await gamersCollection.insertOne(newuser);
     res.redirect('/users/register')
 })
